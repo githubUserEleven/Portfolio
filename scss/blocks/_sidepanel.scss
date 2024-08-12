@@ -1,0 +1,37 @@
+.sidepanel {
+  color: $primary-color;
+  position: fixed;
+  top: 230px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 340px;
+  z-index: 3;
+
+  @include media('<widescreen') {
+    display: none;
+  }
+
+  &__divider {
+    width: 2px;
+    height: 70px;
+    background-color: $primary-color;
+  }
+
+  &__text {
+    height: 150px;
+    width: 37px;
+    margin-right: 40px;
+
+    span {
+      display: block;
+      width: 150px;
+      transform: rotate(-90deg) translate(-30%, -220%);
+    }
+  }
+  img {
+    color: $primary-color;
+  }
+}

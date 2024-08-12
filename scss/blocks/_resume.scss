@@ -1,0 +1,114 @@
+.resume {
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 425px);
+    column-gap: 135px;
+    padding: 15px 100px 0;
+
+    @include media('<widescreen') {
+      column-gap: 90px;
+      padding: 0;
+    }
+
+    @include media('<tablet') {
+      grid-template-columns: repeat(2, 270px);
+      column-gap: 50px;
+    }
+
+    @include media('<phone') {
+      display: block;
+      padding: 0 0 0 50px;
+    }
+
+    @include media('<xs-phone') {
+      padding: 0;
+    }
+  }
+
+  &__column {
+    .title-h3 {
+      position: relative;
+      padding-left: 42px;
+      @include media('<phone') {
+        width: 100%;
+      }
+
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: $primary-color;
+        border-radius: 100%;
+        left: -7px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        position: relative;
+        &:after {
+          content: "";
+          width: 1px;
+          height: calc(100% + 28px);
+          position: absolute;
+          top: -28px;
+          left: 0;
+          background-color: $dark-color;
+        }
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    &:before {
+      content: "";
+      height: 0.2px;
+      width: 44px;
+      position: absolute;
+      top: 43px;
+      background-color: $dark-color;
+    }
+
+    &-head {
+      position: relative;
+      padding: 24px 0 0 100px;
+
+      h4 {
+        margin: 0;
+      }
+    }
+    &-descr {
+      font-size: 12px;
+      margin: 12px 0 25px;
+      padding-left: 43px;
+
+      @include media('<phone') {
+        max-width: 240px;
+      }
+    }
+    &-icon {
+      @include before_circle;
+      position: absolute;
+      top: 53%;
+      left: 44px;
+
+      img {
+        position: relative;
+        left: 13px;
+        top: 9px;
+      }
+    }
+    &-location {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}

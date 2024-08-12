@@ -1,0 +1,125 @@
+body {
+  font-size: 14px;
+  color: $dark-color;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 60px 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @include media("<widescreen") {
+    max-width: 1100px;
+  }
+
+  @include media("<desktop") {
+    max-width: 720px;
+  }
+
+  @include media("<tablet") {
+    max-width: 540px;
+  }
+
+  @include media("<phone") {
+    width: 100%;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+[class*="col-"] {
+  position: relative;
+  padding: 0 15px;
+}
+
+.col-2 {
+  width: 50%;
+}
+
+.col-3 {
+  width: 33.3%;
+}
+
+.col-4 {
+  width: 25%;
+}
+
+.divider {
+  width: 55px;
+  height: 3px;
+  background-color: $primary-color;
+  // margin: 4px 0 20px;
+  margin: -5px auto 0;
+}
+
+.subtitle {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: 60px;
+
+  h2 {
+    @include media("<tablet") {
+      font-size: 24px;
+    }
+  }
+}
+
+.subtitle {
+  position: relative;
+  @include before_circle;
+  // top: 21px;
+
+  &:before {
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

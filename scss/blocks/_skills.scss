@@ -1,0 +1,178 @@
+.skills {
+  &__header {
+    text-align: center;
+    margin-bottom: -10px;
+
+    .divider {
+      padding-left: 20px;
+    }
+
+    &_subtitle {
+      position: relative;
+      text-align: center;
+      display: block;
+      margin-bottom: 8px;
+      @include before_circle;
+      top: 20px;
+
+      &:before {
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+  }
+
+  &__items {
+    margin-top: 49px;
+    padding: 9px 26px;
+    display: grid;
+    grid-template: repeat(2, minmax(270px, auto)) / repeat(4, 270px);
+    grid-auto-rows: minmax(270px, auto);
+    gap: 13px;
+    margin-bottom: 62px;
+    
+
+    @include media("<widescreen") {
+      grid-template: repeat(2, minmax(200px, auto)) / repeat(3, 350px);
+    }
+
+    @include media("<desktop") {
+      grid-template: repeat(2, minmax(200px, auto)) / repeat(3, 250px);
+      padding: 0;
+      justify-content: center;
+    }
+
+    @include media("<tablet") {
+      grid-template: repeat(2, minmax(200px, auto)) / repeat(2, 240px);
+    }
+
+    @include media("<427px") {
+      grid-template: repeat(1, minmax(200px, auto)) / repeat(1, 390px);
+      padding: 0;
+    }
+    @include media("<322px") {
+      grid-template: repeat(1, minmax(200px, auto)) / repeat(1, 285px);
+    }
+  }
+
+  &__item {
+    border: 1px solid black;
+    padding: 26px 30px;
+    
+
+    @include media("<widescreen") {
+      margin-bottom: 20px;
+    }
+
+    &-img {
+      display: flex;
+      align-items: center;
+      min-height: 65px;
+    }
+
+    h2 {
+      margin: 20px 0 !important;
+    }
+
+    h4 {
+      margin: 23px 0 13px;
+    }
+
+    p {
+      margin-top: 15px;
+      margin-bottom: 0;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__ratings {
+    display: grid;
+    grid-template: repeat(2, minmax(70px, auto)) / repeat(3, 350px);
+    column-gap: 45px;
+    row-gap: 30px;
+    padding: 59px 0 0 18px;
+
+    @include media("<widescreen") {
+      // display: block;
+      // padding: 0 0 0 27px;
+      grid-template: repeat(2, minmax(70px, auto)) / repeat(3, 300px);
+    }
+
+    @include media("<desktop") {
+      grid-template: repeat(2, minmax(70px, auto)) / repeat(2, 100px);
+      column-gap: 370px;
+      padding: 0;
+    }
+
+    @include media("<tablet") {
+      column-gap: 210px;
+    }
+
+    @include media("<phone") {
+      grid-template: repeat(2, minmax(70px, auto)) / repeat(2, 250px);
+      column-gap: 40px;
+    }
+
+    @include media("<427px") {
+      grid-template: repeat(1, minmax(70px, auto)) / repeat(1, 267px);
+      justify-content: center;
+    }
+
+    &-item {
+      display: grid;
+      grid-template: minmax(21px, auto) 24px / 200px 35px;
+      justify-content: space-between;
+
+      @include media("<widescreen") {
+        grid-template: minmax(21px, auto) 24px/200px 30px;
+        margin-bottom: 30px;
+      }
+    }
+
+    &-title {
+      position: relative;
+      padding-left: 13px;
+      @include before_circle;
+
+      @include media("<widescreen") {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-counter {
+      font-size: 14px;
+      line-height: 21px;
+      display: flex;
+      flex-direction: row;
+    }
+
+    &-line {
+      width: 350px;
+      height: 14px;
+      background-color: #e8e4de;
+      border-radius: 4px;
+      grid-column: 1 / 3;
+
+      @include media("<widescreen") {
+        width: 100%;
+      }
+
+      @include media("<phone") {
+        width: 250px;
+      }
+
+      span {
+        display: block;
+        height: 100%;
+        background-color: $primary-color;
+        border-radius: 4px;
+      }
+    }
+  }
+}

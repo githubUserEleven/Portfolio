@@ -1,0 +1,61 @@
+.promo {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: $light-color;
+  z-index: 0;
+  padding-top: 10px;
+
+  &-head {
+    margin-bottom: 70px;
+    padding-bottom: 70px;
+    .title_h1 {
+      margin: 10px 0 37px;
+      line-height: 1.2;
+
+      @include media('<tablet') {
+        font-size: 36px;
+        margin: 17px 0 37px;
+      }
+
+      @include media('<phone') {
+        font-size: 26px;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    background-color: rgba(black, 0.7);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .promo_name {
+    position: relative;
+    @include before_circle;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+
+  .fz16 {
+    line-height: 24px;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 245px;
+    a {
+      color: $light-color;
+      text-decoration: none;
+      font-weight: 700;
+    }
+  }
+}
